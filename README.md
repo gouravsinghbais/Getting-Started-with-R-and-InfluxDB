@@ -11,9 +11,9 @@ install.packages(c("httr", "bit64", "nanotime", "plyr"))
 # Making a Connection
 
 Parameters that must be known to make DB connection are:
-**Token:** Access token that you have generated using the console, you can log in to the influxDb dashboard and copy the same.
-**Bucket:** This requires the name of the bucket on which you would be working. You can choose the initial bucket or create a new one using the dashboard.
-**Organisation:** Organisation that you have named during the initial setup of the influx DB.
+ - **Token:** Access token that you have generated using the console, you can log in to the influxDb dashboard and copy the same.
+ - **Bucket:** This requires the name of the bucket on which you would be working. You can choose the initial bucket or create a new one using the dashboard.
+ - **Organisation:** Organisation that you have named during the initial setup of the influx DB.
 Since this connection would be made locally the connection script would look like this:
 ```
 ## import the client library
@@ -55,5 +55,5 @@ result <- client$query('from(bucket: "RInfluxClient") |> range(start: -2y) |> dr
 ```
 
 
-
+To explore InfluxDB in detail you can refer the following [link](https://docs.influxdata.com/influxdb/v2.0/).
 
