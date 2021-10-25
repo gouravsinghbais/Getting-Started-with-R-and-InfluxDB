@@ -1,4 +1,4 @@
-## import libraries 
+## import libraries  
 library(forecast)
 library(lubridate)
 library(influxdbclient)
