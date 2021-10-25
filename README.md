@@ -1,6 +1,6 @@
 # Getting-Started-with-R-and-InfluxDB
 
-To install the InfluxDB client library for R which can be downloaded using the following line of code:
+To install the InfluxDB client library for R you can use the following line of code:
 ```
 install.packages("influxdbclient")
 ```
@@ -32,6 +32,7 @@ client <- InfluxDBClient$new(url = "http://localhost:8086",
 
 # Inserting Data 
 
+The **write()** method is used to insert the data in InfluxDB using R client. 
 *To store the Covid-19 data in InfluxDB using the write method you need to make sure that your timestamp column (Date) is in POSIXct format.*
 
 ```
@@ -48,7 +49,7 @@ The response from the write() function is either NULL, True or the error. To deb
 
 ## Using Data
 
-To query the data from database you can use the following lines of code:
+The **query()** method is used to read data from InfluxDB. To query the data from database you can use the following lines of code:
 
 ```
 result <- client$query('from(bucket: "RInfluxClient") |> range(start: -2y) |> drop(columns: ["_start", "_stop"])')
